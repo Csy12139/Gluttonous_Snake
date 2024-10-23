@@ -4,4 +4,7 @@ project(Gluttonous_Snake C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(Gluttonous_Snake
-        main.c)
+        main.c
+        screen.c
+        action.c
+        snack.c)
