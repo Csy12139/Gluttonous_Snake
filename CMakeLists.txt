@@ -7,4 +7,5 @@ add_executable(Gluttonous_Snake
         main.c
         screen.c
         action.c
-        snack.c)
+        snack.c
+        context.c)
