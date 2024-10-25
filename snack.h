@@ -6,8 +6,7 @@
 #define GLUTTONOUS_SNAKE_SNACK_H
 
 #include <stdbool.h>
-
-extern struct UserActionContext ctx;
+#include "array.h"
 
 enum Direction {
     Up = 2,
@@ -16,6 +15,7 @@ enum Direction {
     Left = 5,
     None = 6,
 };
+
 struct Snack { // 蛇
     int length; // 蛇的长度
     int body_direction[20 * 100]; // 蛇身的方向
@@ -35,14 +35,15 @@ struct Fruit { // 果实
 };
 
 // 初始化游戏
-void InitGame();
+void InitSnackGame();
 
 // 随机生成果实
-void GenerateFruit(struct UserActionContext *ctx);
+void GenerateFruit(struct TwoDimensionalArray *board);
 
 // 获取移动步长
 struct Move GetMoveStep(enum Direction dir);
+
 // 贪吃蛇游戏
-bool SnackGame(struct UserActionContext *ctx);
+bool SnackGame(struct TwoDimensionalArray *board, enum Direction dir);
 
 #endif //GLUTTONOUS_SNAKE_SNACK_H
